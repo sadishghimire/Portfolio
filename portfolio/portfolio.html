@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sadish Ghimire | ML Engineer</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body {
+      background: radial-gradient(circle at top, #1e1b4b, #020617);
+      color: #e5e7eb;
+      overflow-x: hidden;
+      position: relative;
+        }
+        canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* behind content */
+  pointer-events: none;
+}
+#contactForm{
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    width: 50vh;
+}
+#contactForm textarea{
+    height: 30vh;
+    width: 50vh;
+}
+
+section, footer {
+  position: relative;
+  z-index: 1; /* content above particles */
+}
+
+
+
+    section { padding: 100px 10%; }
+
+    h1 {
+      font-size: 3.5rem;
+      letter-spacing: 0.2em;
+      animation: slideDown 1s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero p { max-width: 600px; margin-top: 20px; color: #a5b4fc; }
+
+    .btns { margin-top: 40px; }
+    .btn {
+      padding: 12px 24px;
+      margin-right: 10px;
+      border-radius: 25px;
+      border: 1px solid #6366f1;
+      background: transparent;
+      color: #e5e7eb;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn:hover { background: #6366f1; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+
+    .card {
+      background: rgba(15, 23, 42, 0.6);
+      padding: 25px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-8px); }
+
+    footer { text-align: center; padding: 40px; color: #94a3b8; }
+  /* RESPONSIVE DESIGN */
+  section, footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+@media (max-width: 1024px) {
+  section { padding: 80px 6%; }
+  h1 { font-size: 2.8rem; letter-spacing: 0.15em; }
+}
+
+@media (max-width: 768px) {
+  section { padding: 70px 5%; }
+
+  h1 {
+    font-size: 2.3rem;
+    letter-spacing: 0.12em;
+    text-align: center;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+}
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.photo-grid img {
+  width: 20%;
+  height: 200%;        /* let it scale naturally */
+  aspect-ratio: 4/3;   /* keeps consistent shape */
+  object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.05);
+}
+
+
+/* @media (max-width: 480px) {
+  section { padding: 60px 4%; }
+
+  h1 {
+    font-size: 1.9rem;
+    letter-spacing: 0.1em;
+  }
+
+  h2 { font-size: 1.4rem; }
+
+  footer {
+    font-size: 0.85rem;
+  }
+} */
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr; /* single column on mobile */
+  }
+
+  .photo-grid img {
+    height: auto;       /* scale naturally */
+    aspect-ratio: auto; /* remove fixed ratio on tiny screens */
+  }
+}
+
+
+</style>
+</head>
+<body>
+
+  <canvas id="particles"></canvas>
+
+  <section class="hero">
+    <h1>SADISH GHIMIRE</h1>
+    <p>Machine Learning Engineer • Backend & Data Enthusiast</p>
+    <p>I build intelligent systems that learn from data and solve real‑world problems.</p>
+
+    
+    <div class="btns">
+        <a href="https://github.com/sadishghimire" target="_blank" class="btn">GitHub</a>
+        <a href="https://www.linkedin.com/in/sadish-ghimire-7a792b211/" target="_blank" class="btn">LinkedIn</a>
+        </div>
+  </section>
+
+  <section>
+    <h2>Core Expertise</h2>
+    <br />
+    <div class="grid">
+      <div class="card">Machine Learning<br /><small>Training & Evaluation</small></div>
+      <div class="card">Deep Learning<br /><small>CNNs, RNNs, Transformers</small></div>
+      <div class="card">Data Engineering<br /><small>SQL</small></div>
+      <div class="card">Backend APIs<br /><small>.NET, Python</small></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Featured Projects</h2>
+    <br />
+    <div class="grid">
+      <div class="card">Smart ID Card System</div>
+      <div class="card">Prediction Engine</div>
+      <div class="card"><a href="https://github.com/sadishghimire/medical-misinformation-detection-with-explanation." target="_blank" class="btn">Medical Misinformation detection with explainable classification</a>
+      </div> 
+
+    </div>
+  </section>
+
+  <section id="photos">
+    <h2>Photo</h2>
+    <br />
+    <div class="grid photo-grid">
+      <img src="me.png" alt="Sadish Photo 1" />
+    </div>
+
+    <div id="lightbox" class="lightbox">
+      <span id="close">×</span>
+      <img id="lightbox-img" />
+    </div>
+  </section>
+
+  <footer>
+    © <span id="year"></span> Sadish Ghimire • sadishghimire.com.np
+  </footer>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <br />
+    <form id="contactForm" action="mailto:youremail@example.com" method="post" enctype="text/plain">
+        <input placeholder="Your Name" name="name" required />
+        <input placeholder="Your Email" name="email" required />
+        <textarea placeholder="Your Message" name="message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>      
+  </section>
+
+  <script>
+    // CANVAS SETUP
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+  
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+  
+    // PARTICLES
+    const particleCount = 150;
+    const particles = [];
+  
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        r: Math.random() * 2 + 1
+      });
+    }
+  
+    function drawParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+      // Draw connections (neural network)
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 200) {
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(99,102,241,0.2)'; // slightly brighter line
+            ctx.lineWidth = 1;
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+  
+      // Draw particles
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(99,102,241,0.8)';
+        ctx.fill();
+  
+        // Move particle
+        p.x += p.vx;
+        p.y += p.vy;
+  
+        // Bounce off edges
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      });
+  
+      requestAnimationFrame(drawParticles);
+    }
+  
+    drawParticles();
+  </script>
+  
+</body>
+</html>
